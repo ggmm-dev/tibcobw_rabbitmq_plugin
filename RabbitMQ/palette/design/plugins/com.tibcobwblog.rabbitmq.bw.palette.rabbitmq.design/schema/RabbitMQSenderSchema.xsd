@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://www.tibco.com/RabbitMQ/RabbitMQSender" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/RabbitMQ/RabbitMQSender">
+  <xsd:element name="RabbitMQSenderInput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="queue" type="xsd:string"/>
+        <xsd:element name="message" type="xsd:anyType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RabbitMQSenderOutput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="sent" type="xsd:boolean"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

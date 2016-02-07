@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://www.tibco.com/RabbitMQ/RabbitMQReceiver" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/RabbitMQ/RabbitMQReceiver">
+  <xsd:element name="RabbitMQReceiverOutput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="message" type="xsd:anyType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

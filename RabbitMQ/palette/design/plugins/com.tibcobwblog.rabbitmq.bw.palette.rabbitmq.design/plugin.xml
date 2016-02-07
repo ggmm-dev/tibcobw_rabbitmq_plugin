@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+ Overridable true
+ $Id$
+-->
+
+<plugin>
+
+   <extension
+         point="com.tibco.bw.design.Palette">
+      <paletteDrawer
+            expanded="false"
+            largeIcon="icons/obj32/rabbitmq_32x32.png"
+            name="%rabbitmq.palette.name"
+            paletteID="bw.rabbitmq"
+            priority="500"
+            productID="bw.rabbitmq.product"
+            smallIcon="icons/obj16/rabbitmq_16x16.png"
+            tooltip="%rabbitmq.palette.tooltip">
+      </paletteDrawer>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.ActivityType">
+      <activityType
+            activityTypeID="bw.rabbitmq.RabbitMQSender"
+            name="%rabbitmq.activity.RabbitMQSender.name"
+            type="Standard"
+            priority="100"
+            tooltip="%rabbitmq.activity.RabbitMQSender.tooltip"
+            visible="true">
+         <palette
+               paletteID="bw.rabbitmq">
+         </palette>
+      </activityType>
+
+      <activityType
+            activityTypeID="bw.rabbitmq.RabbitMQReceiver"
+            name="%rabbitmq.activity.RabbitMQReceiver.name"
+            isEventSource="true"
+            canCreateInstance="true"
+            type="Starter"
+            priority="100"
+            tooltip="%rabbitmq.activity.RabbitMQReceiver.tooltip"
+            visible="true">
+         <palette
+               paletteID="bw.rabbitmq">
+         </palette>
+      </activityType>
+
+      
+   </extension>
+   
+     <extension
+         point="com.tibco.bw.design.ActivitySignature">
+      <signature
+            activityTypeID="bw.rabbitmq.RabbitMQSender"
+            signatureClass="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderSignature">
+      </signature>
+      <signature
+            activityTypeID="bw.rabbitmq.RabbitMQReceiver"
+            signatureClass="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverSignature">
+      </signature>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.ActivityTypeConfigEMF">
+      <config
+            activityTypeID="bw.rabbitmq.RabbitMQSender"
+            eClassName="RabbitMQSender"
+            ePackageNSURI="http://ns.tibco.com/bw/palette/rabbitmq"
+            instanceName="%rabbitmq.activity.default.RabbitMQSender.name"
+            modelHelperClass="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderModelHelper">
+      </config>
+      <config
+            activityTypeID="bw.rabbitmq.RabbitMQReceiver"
+            eClassName="RabbitMQReceiver"
+            ePackageNSURI="http://ns.tibco.com/bw/palette/rabbitmq"
+            instanceName="%rabbitmq.activity.default.RabbitMQReceiver.name"
+            modelHelperClass="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverModelHelper">
+      </config>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="com.tibco.bw.core.design.process.editor">
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderGeneralSection"
+               filter="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderGeneralSection"
+               id="bw.rabbitmq.RabbitMQSender.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
+         <propertySection
+               class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderAdvancedSection"
+               filter="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender.RabbitMQSenderAdvancedSection"
+               id="bw.rabbitmq.RabbitMQSender.advanced"
+               tab="tibco.bw.activity.property.tab.advanced">
+         </propertySection>
+         <propertySection
+               afterSection="com.tibco.bw.design.activity.general"
+               class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverGeneralSection"
+               filter="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverGeneralSection"
+               id="bw.rabbitmq.RabbitMQReceiver.general"
+               tab="tibco.bw.activity.property.tab.general">
+         </propertySection>
+         <propertySection
+               class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverAdvancedSection"
+               filter="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver.RabbitMQReceiverAdvancedSection"
+               id="bw.rabbitmq.RabbitMQReceiver.advanced"
+               tab="tibco.bw.activity.property.tab.advanced">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   <extension
+         point="com.tibco.bw.design.BWContextHelp">
+      <plugin
+            defaultURL="file://D:/Projects/GitHub/tibcobw_rabbitmq_plugin/RabbitMQ/doc/index.html"
+            id="bw.rabbitmq.product"
+            name="BusinessWorks RabbitMQ Plugin">
+      </plugin>
+   </extension>
+   
+</plugin>

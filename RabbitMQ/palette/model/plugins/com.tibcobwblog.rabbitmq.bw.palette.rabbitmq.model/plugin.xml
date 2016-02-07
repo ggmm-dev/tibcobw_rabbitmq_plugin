@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+ Overridable true
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ns.tibco.com/bw/palette/rabbitmq"
+            class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage"/>
+   </extension>
+   <extension
+         point="com.tibco.bw.model.ActivityIcon">
+    <activityIcon
+            activityTypeID="bw.rabbitmq.RabbitMQSender"
+            diagramIcon="icons/obj48/rabbitmq_rabbitmqsender_48x48.png"
+            largeIcon="icons/obj32/rabbitmq_rabbitmqsender_32x32.png"
+            smallIcon="icons/obj16/rabbitmq_rabbitmqsender_16x16.png">
+      </activityIcon>
+    <activityIcon
+            activityTypeID="bw.rabbitmq.RabbitMQReceiver"
+            diagramIcon="icons/obj48/rabbitmq_rabbitmqreceiver_48x48.png"
+            largeIcon="icons/obj32/rabbitmq_rabbitmqreceiver_32x32.png"
+            smallIcon="icons/obj16/rabbitmq_rabbitmqreceiver_16x16.png">
+      </activityIcon>
+    </extension>
+</plugin>

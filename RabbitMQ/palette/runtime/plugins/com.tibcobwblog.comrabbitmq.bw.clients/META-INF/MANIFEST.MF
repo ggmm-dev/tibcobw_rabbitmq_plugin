@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Clients
+Bundle-SymbolicName: com.tibcobwblog.comrabbitmq.bw.clients
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCOBWBLOG
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: rabbitmq-client.jar,
+ .
+Export-Package: com.rabbitmq.client,
+ com.rabbitmq.client.impl,
+ com.rabbitmq.client.impl.recovery,
+ com.rabbitmq.tools,
+ com.rabbitmq.tools.json,
+ com.rabbitmq.tools.jsonrpc,
+ com.rabbitmq.utility

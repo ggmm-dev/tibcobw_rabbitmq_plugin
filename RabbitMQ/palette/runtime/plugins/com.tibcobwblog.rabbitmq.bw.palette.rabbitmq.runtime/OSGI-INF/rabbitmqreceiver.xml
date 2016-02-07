@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Overridable true -->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.bw.palette.rabbitmq.RabbitMQReceiver" name="bw.rabbitmq.RabbitMQReceiver">
+   <implementation class="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.runtime.RabbitMQReceiverEventSource"/>
+   <property name="activityTypeID" type="String" value="bw.rabbitmq.RabbitMQReceiver"/>
+   <property name="modelPackageClass" type="String" value="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage"/>
+   <property name="runtimeClass" type="String" value="com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.runtime.RabbitMQReceiverEventSource"/>
+</scr:component>

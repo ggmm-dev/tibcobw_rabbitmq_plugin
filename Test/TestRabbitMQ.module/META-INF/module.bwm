@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1454241271042="http://www.example.org/schema/1454241271042" xmlns:wsdl_1454241270976="http://www.example.org/wsdl/1454241270976" xmi:id="_s2qh0MgQEeWmQudvGu9AAw" targetNamespace="http://tns.tibco.com/bw/composite/TestRabbitMQ.module" name="TestRabbitMQ.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_ZqGw4MgREeW63-3IedGw4w" name="Process" promote="ComponentProcess/Process">
+    <sca:interface.wsdl xmi:id="_ZqMQcMgREeW63-3IedGw4w" interface="http://www.example.org/wsdl/1454241270976#wsdl.interface(Process)" scaext:wsdlLocation="../Service%20Descriptors/Process.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_S5k-oMgZEeWairO0uY5Rhw" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/8208c7bd066c499d8a07f42681a0e240/SOAPServiceBinding" portTypeQName="wsdl_1454241270976:Process" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/TestRabbitMQ.module/Service%20Descriptors/Process.wsdl">
+      <bindingType xmi:id="_S5v9wMgZEeWairO0uY5Rhw"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_Ud_-wMgZEeWairO0uY5Rhw" endpointURI="/SOAPServiceBinding/process/" httpConnector="testrabbitmq.module.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_S5zBEMgZEeWairO0uY5Rhw" operationName="operation" action="operation" actionNeeded="true">
+        <bindingType xmi:id="_S5zBEcgZEeWairO0uY5Rhw"/>
+        <messageConfiguration xmi:id="_S5zBEsgZEeWairO0uY5Rhw" messageQName="wsdl_1454241270976:operationRequest" wsdlLocation="platform:/resource/TestRabbitMQ.module/Service%20Descriptors/Process.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_S5zBE8gZEeWairO0uY5Rhw" partName="parameters" partElementName="schema_1454241271042:operationRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_S5zBFMgZEeWairO0uY5Rhw" messageQName="wsdl_1454241270976:operationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/TestRabbitMQ.module/Service%20Descriptors/Process.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_S5zBFcgZEeWairO0uY5Rhw" partName="parameters" partElementName="schema_1454241271042:operationResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_S5zoIMgZEeWairO0uY5Rhw">
+          <inputMapping xmi:id="_S50PMMgZEeWairO0uY5Rhw"/>
+          <outputMapping xmi:id="_S50PMcgZEeWairO0uY5Rhw" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_S50PMsgZEeWairO0uY5Rhw" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_tjZsAMgQEeWmQudvGu9AAw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tjoVgMgQEeWmQudvGu9AAw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tjt1EMgQEeWmQudvGu9AAw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tj0iwMgQEeWmQudvGu9AAw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tj7QcMgQEeWmQudvGu9AAw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tkBXEMgQEeWmQudvGu9AAw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tkG2oMgQEeWmQudvGu9AAw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tkM9QMgQEeWmQudvGu9AAw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_tkTq8MgQEeWmQudvGu9AAw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_tITEYMgQEeWmQudvGu9AAw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_tIUSgMgQEeWmQudvGu9AAw" processName="testrabbitmq.module.Process"/>
+    <sca:service xmi:id="_ZqADMMgREeW63-3IedGw4w" name="Process">
+      <sca:interface.wsdl xmi:id="_ZqAqQMgREeW63-3IedGw4w" interface="http://www.example.org/wsdl/1454241270976#wsdl.interface(Process)" scaext:wsdlLocation="../Service%20Descriptors/Process.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_jLeZcMgREeW63-3IedGw4w" name="ComponentProcess1" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jLeZccgREeW63-3IedGw4w" processName="testrabbitmq.module.Process1"/>
+  </sca:component>
+</sca:composite>
