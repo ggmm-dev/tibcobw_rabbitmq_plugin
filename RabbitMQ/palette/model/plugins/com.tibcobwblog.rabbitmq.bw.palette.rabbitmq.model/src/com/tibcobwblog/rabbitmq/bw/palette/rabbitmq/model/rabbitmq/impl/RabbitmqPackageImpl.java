@@ -127,7 +127,7 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRabbitMQSender_AttrName() {
+	public EAttribute getRabbitMQSender_InputStyle() {
 		return (EAttribute)rabbitMQSenderEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -154,8 +154,26 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRabbitMQReceiver_Queue() {
+	public EAttribute getRabbitMQReceiver_Port() {
 		return (EAttribute)rabbitMQReceiverEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRabbitMQReceiver_Queue() {
+		return (EAttribute)rabbitMQReceiverEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRabbitMQReceiver_InputStyle() {
+		return (EAttribute)rabbitMQReceiverEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -189,11 +207,13 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 		rabbitMQSenderEClass = createEClass(RABBIT_MQ_SENDER);
 		createEAttribute(rabbitMQSenderEClass, RABBIT_MQ_SENDER__HOST);
 		createEAttribute(rabbitMQSenderEClass, RABBIT_MQ_SENDER__PORT);
-		createEAttribute(rabbitMQSenderEClass, RABBIT_MQ_SENDER__ATTR_NAME);
+		createEAttribute(rabbitMQSenderEClass, RABBIT_MQ_SENDER__INPUT_STYLE);
 
 		rabbitMQReceiverEClass = createEClass(RABBIT_MQ_RECEIVER);
 		createEAttribute(rabbitMQReceiverEClass, RABBIT_MQ_RECEIVER__HOST);
+		createEAttribute(rabbitMQReceiverEClass, RABBIT_MQ_RECEIVER__PORT);
 		createEAttribute(rabbitMQReceiverEClass, RABBIT_MQ_RECEIVER__QUEUE);
+		createEAttribute(rabbitMQReceiverEClass, RABBIT_MQ_RECEIVER__INPUT_STYLE);
 	}
 
 	/**
@@ -229,11 +249,13 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 		initEClass(rabbitMQSenderEClass, RabbitMQSender.class, "RabbitMQSender", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRabbitMQSender_Host(), ecorePackage.getEString(), "host", null, 0, 1, RabbitMQSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRabbitMQSender_Port(), ecorePackage.getEString(), "port", null, 0, 1, RabbitMQSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRabbitMQSender_AttrName(), ecorePackage.getEString(), "AttrName", null, 0, 1, RabbitMQSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRabbitMQSender_InputStyle(), ecorePackage.getEString(), "inputStyle", null, 0, 1, RabbitMQSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rabbitMQReceiverEClass, RabbitMQReceiver.class, "RabbitMQReceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRabbitMQReceiver_Host(), ecorePackage.getEString(), "host", null, 0, 1, RabbitMQReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRabbitMQReceiver_Port(), ecorePackage.getEString(), "port", null, 0, 1, RabbitMQReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRabbitMQReceiver_Queue(), ecorePackage.getEString(), "queue", null, 0, 1, RabbitMQReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRabbitMQReceiver_InputStyle(), ecorePackage.getEString(), "inputStyle", null, 0, 1, RabbitMQReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -310,15 +332,15 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 			 "value", ""
 		   });	
 		addAnnotation
-		  (getRabbitMQSender_AttrName(), 
+		  (getRabbitMQSender_InputStyle(), 
 		   source, 
 		   new String[] {
-			 "sectionName", "Newcategory",
+			 "sectionName", "Advanced",
 			 "isRequired", "false",
-			 "label", "Label",
-			 "isModelProperty", "false",
-			 "control", "TextBox",
-			 "value", ""
+			 "label", "Input Style",
+			 "isModelProperty", "true",
+			 "control", "ComboViewer",
+			 "value", "String;Binary"
 		   });	
 		addAnnotation
 		  (getRabbitMQReceiver_Host(), 
@@ -327,6 +349,17 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 			 "sectionName", "General",
 			 "isRequired", "true",
 			 "label", "Host",
+			 "isModelProperty", "true",
+			 "control", "TextBox",
+			 "value", ""
+		   });	
+		addAnnotation
+		  (getRabbitMQReceiver_Port(), 
+		   source, 
+		   new String[] {
+			 "sectionName", "General",
+			 "isRequired", "true",
+			 "label", "Port",
 			 "isModelProperty", "true",
 			 "control", "TextBox",
 			 "value", ""
@@ -341,6 +374,17 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 			 "isModelProperty", "true",
 			 "control", "TextBox",
 			 "value", ""
+		   });	
+		addAnnotation
+		  (getRabbitMQReceiver_InputStyle(), 
+		   source, 
+		   new String[] {
+			 "sectionName", "Advanced",
+			 "isRequired", "false",
+			 "label", "Input Style",
+			 "isModelProperty", "false",
+			 "control", "ComboViewer",
+			 "value", "String;Binary"
 		   });
 	}
 

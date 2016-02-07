@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getHost <em>Host</em>}</li>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getPort <em>Port</em>}</li>
- *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getAttrName <em>Attr Name</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getInputStyle <em>Input Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,29 +76,29 @@ public interface RabbitMQSender extends EObject {
 	void setPort(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Attr Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Input Style</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attr Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Input Style</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attr Name</em>' attribute.
-	 * @see #setAttrName(String)
-	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage#getRabbitMQSender_AttrName()
-	 * @model annotation="dkcontrolconfig sectionName='Newcategory' isRequired='false' label='Label' isModelProperty='false' control='TextBox' value=''"
+	 * @return the value of the '<em>Input Style</em>' attribute.
+	 * @see #setInputStyle(String)
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage#getRabbitMQSender_InputStyle()
+	 * @model annotation="dkcontrolconfig sectionName='Advanced' isRequired='false' label='Input Style' isModelProperty='true' control='ComboViewer' value='String;Binary'"
 	 * @generated
 	 */
-	String getAttrName();
+	String getInputStyle();
 
 	/**
-	 * Sets the value of the '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getAttrName <em>Attr Name</em>}' attribute.
+	 * Sets the value of the '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getInputStyle <em>Input Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attr Name</em>' attribute.
-	 * @see #getAttrName()
+	 * @param value the new value of the '<em>Input Style</em>' attribute.
+	 * @see #getInputStyle()
 	 * @generated
 	 */
-	void setAttrName(String value);
+	void setInputStyle(String value);
 
 } // RabbitMQSender

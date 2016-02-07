@@ -53,6 +53,10 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 
 
 	private String queueName;
+
+
+
+	private String inputStyle;
 	
 	/**
 	 * <!-- begin-custom-doc -->
@@ -128,7 +132,7 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 								,eventSourceContext.getDeploymentUnitName()
 								,eventSourceContext.getDeploymentUnitVersion() });
 		}
-		
+		N outputInfo = null; 
 
 		if (sleepTime >= 0) {
 			try {
@@ -150,11 +154,17 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 					             String routingKey = envelope.getRoutingKey();
 					             String contentType = properties.getContentType();
 					             long deliveryTag = envelope.getDeliveryTag();
-					             System.out.println("+++++++++++++++ " + new String(body));
+					             
+					             Object returnedValue = body;
+					             if("String".equals(inputStyle)){
+					            	 returnedValue = new String(body);
+					             }
+					             
 					             ProcessingContext<N> pcx = eventSourceContext.getXMLProcessingContext();
 									N outputInfo;
 									try {
-										outputInfo = evalOutput(pcx, new String(body));									
+										
+										outputInfo = evalOutput(pcx, returnedValue);									
 										eventSourceContext.newEvent(outputInfo, new EventContext<N>() {
 											private static final long serialVersionUID = 4963596764256131074L;
 											@Override
@@ -185,9 +195,8 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 				eventSourceContext.newEvent(new EventSourceFault(eventSourceContext, e));
 			} finally {
 				if(getActivityLogger().isDebugEnabled()){
-					//TODO
-					//String serializedNode = XMLUtils.serializeNode(outputInfo, eventSourceContext.getXMLProcessingContext());
-	    			//activityLogger.debug(RuntimeMessageBundle.DEBUG_PLUGIN_ACTIVITY_OUTPUT, new Object[] {eventSourceContext.getEventSourceName(), serializedNode, eventSourceContext.getEventSourceName()});
+					String serializedNode = XMLUtils.serializeNode(outputInfo, eventSourceContext.getXMLProcessingContext());
+	    			activityLogger.debug(RuntimeMessageBundle.DEBUG_PLUGIN_ACTIVITY_OUTPUT, new Object[] {eventSourceContext.getEventSourceName(), serializedNode, eventSourceContext.getEventSourceName()});
     			}
 			}
 		}
@@ -205,17 +214,20 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 	 *			 Business object.
 	 * @return An XML Element which adheres to the output schema of the activity or may return <code>null</code> if the activity does not require an output.
 	 */
-	protected <A> N evalOutput(ProcessingContext<N> processingContext, String data) throws Exception {
+	protected <A> N evalOutput(ProcessingContext<N> processingContext, Object data) throws Exception {
 		
 		RabbitMQReceiverOutput rabbitMQReceiverOutput = new RabbitMQReceiverOutput();
-		rabbitMQReceiverOutput.setMessage(data);
+		rabbitMQReceiverOutput.setMessage("StringValue");
 		N output = PaletteUtil.parseObjtoN(RabbitMQReceiverOutput.class, rabbitMQReceiverOutput, processingContext, eventSourceContext.getEventSourceOutputType().getTargetNamespace(), "RabbitMQReceiverOutput");
 		// begin-custom-code
         // add your own business code here
+		rabbitMQReceiverOutput.setMessage(data);
+		output = PaletteUtil.parseObjtoN(RabbitMQReceiverOutput.class, rabbitMQReceiverOutput, processingContext, eventSourceContext.getEventSourceOutputType().getTargetNamespace(), "RabbitMQReceiverOutput");
         // end-custom-code
 	    return output;
 	}
-    	/**
+
+	/**
 	 * <!-- begin-custom-doc -->
 	 * 
 	 * <!-- end-custom-doc -->
@@ -320,9 +332,17 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 		sleepTime = 5;
 		// begin-custom-code
 		// add your own business code here	
-	     factory = new ConnectionFactory();
+		
+		
+		inputStyle = this.eventSourceConfig.getInputStyle();
+		
+	    factory = new ConnectionFactory();
 	    factory.setHost(this.eventSourceConfig.getHost());
-	    factory.setPort(32769);
+	    try{
+	    	factory.setPort(Integer.parseInt(this.eventSourceConfig.getPort()));
+	    }catch(NumberFormatException ex){
+	    	factory.setPort(35678);
+	    }
 	     try {
 			connection = factory.newConnection();
 			channel = connection.createChannel();

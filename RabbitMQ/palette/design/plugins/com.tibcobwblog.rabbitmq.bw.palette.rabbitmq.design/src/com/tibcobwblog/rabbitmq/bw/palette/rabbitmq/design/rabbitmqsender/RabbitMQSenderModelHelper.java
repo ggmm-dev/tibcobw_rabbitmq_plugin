@@ -22,6 +22,7 @@ public class RabbitMQSenderModelHelper extends BWAbstractModelHelper
     @Override
     public EObject createInstance() {
         RabbitMQSender activity = RabbitmqFactory.eINSTANCE.createRabbitMQSender();
+        activity.setInputStyle("String;Binary");
         // begin-custom-code
         // end-custom-code
         return activity;

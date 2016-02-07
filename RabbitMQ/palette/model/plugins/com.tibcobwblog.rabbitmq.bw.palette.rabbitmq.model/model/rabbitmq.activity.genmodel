@@ -8,11 +8,13 @@
     <genClasses ecoreClass="rabbitmq.activity.ecore#//RabbitMQSender">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQSender/host"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQSender/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQSender/AttrName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQSender/inputStyle"/>
     </genClasses>
     <genClasses ecoreClass="rabbitmq.activity.ecore#//RabbitMQReceiver">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQReceiver/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQReceiver/port"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQReceiver/queue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rabbitmq.activity.ecore#//RabbitMQReceiver/inputStyle"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

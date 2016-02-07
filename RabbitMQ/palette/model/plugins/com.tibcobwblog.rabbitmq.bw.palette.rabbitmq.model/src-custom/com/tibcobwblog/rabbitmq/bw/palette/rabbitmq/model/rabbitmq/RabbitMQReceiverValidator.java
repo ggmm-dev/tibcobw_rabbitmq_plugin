@@ -28,6 +28,15 @@ public class RabbitMQReceiverValidator implements EventSourceConfigurationValida
 	public void validateBWEventSourceConfiguration(EventSourceValidationContext context) throws ValidationException {
 		RabbitMQReceiver model =(RabbitMQReceiver) context.getEventSourceConfigurationModel();    	
 		
+	    String portModul = context.getAttributeBindingPropertyName("port");
+		if(portModul == null || "".equals(portModul)){
+		    String port = model.getPort(); 
+		    if(port == null || "".equals(port)) {
+		        String message = ""; //$NON-NLS-1$
+		        message = NLS.bind(Messages.PALETTE_PARAMETER_VALUE_INVALID, new String[] {"Port"});
+		        context.createError(message, null, MessageCode.PARAMETER_NOT_SPECIFIED, RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__PORT);
+		    }
+		}
 	    String queueModul = context.getAttributeBindingPropertyName("queue");
 		if(queueModul == null || "".equals(queueModul)){
 		    String queue = model.getQueue(); 

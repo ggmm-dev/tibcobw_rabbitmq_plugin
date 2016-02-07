@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="queue" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,7 +39,7 @@ public class RabbitMQSenderInput {
     @XmlElement(required = true)
     protected String queue;
     @XmlElement(required = true)
-    protected String message;
+    protected Object message;
 
     /**
      * Gets the value of the queue property.
@@ -70,10 +70,10 @@ public class RabbitMQSenderInput {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getMessage() {
+    public Object getMessage() {
         return message;
     }
 
@@ -82,10 +82,10 @@ public class RabbitMQSenderInput {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setMessage(String value) {
+    public void setMessage(Object value) {
         this.message = value;
     }
 

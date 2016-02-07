@@ -35,6 +35,20 @@ public class RabbitMQReceiverGeneralSection extends AbstractBWTransactionalSecti
 	* <!-- end-custom-doc -->
 	* @generated
 	*/
+    private AttributeBindingField portABF;
+/**
+	* <!-- begin-custom-doc -->
+	* 
+	* <!-- end-custom-doc -->
+	* @generated
+	*/
+    private Text port;
+/**
+	* <!-- begin-custom-doc -->
+	* 
+	* <!-- end-custom-doc -->
+	* @generated
+	*/
     private AttributeBindingField queueABF;
    /**
 	* <!-- begin-custom-doc -->
@@ -61,6 +75,7 @@ public class RabbitMQReceiverGeneralSection extends AbstractBWTransactionalSecti
     @Override
     protected void initBindings() {
         getBindingManager().bind(hostABF, getInput(), RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__HOST); 
+        getBindingManager().bind(portABF, getInput(), RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__PORT); 
         getBindingManager().bind(queueABF, getInput(), RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__QUEUE); 
    	    // begin-custom-code
         // end-custom-code
@@ -83,6 +98,11 @@ public class RabbitMQReceiverGeneralSection extends AbstractBWTransactionalSecti
    	    host = BWFieldFactory.getInstance().createTextBox(parent);
 
    	    hostABF = BWFieldFactory.getInstance().createAttributeBindingField(parent, host, PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
+
+   	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQRECEIVER_PORT, true);
+   	    port = BWFieldFactory.getInstance().createTextBox(parent);
+
+   	    portABF = BWFieldFactory.getInstance().createAttributeBindingField(parent, port, PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
 
    	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQRECEIVER_QUEUE, true);
    	    queue = BWFieldFactory.getInstance().createTextBox(parent);

@@ -20,7 +20,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl#getHost <em>Host</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl#getPort <em>Port</em>}</li>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl#getQueue <em>Queue</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl#getInputStyle <em>Input Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +50,26 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 	protected String host = HOST_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PORT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected String port = PORT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getQueue() <em>Queue</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,6 +88,26 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 	 * @ordered
 	 */
 	protected String queue = QUEUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInputStyle() <em>Input Style</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INPUT_STYLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInputStyle() <em>Input Style</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String inputStyle = INPUT_STYLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,6 +154,27 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPort() {
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(String newPort) {
+		String oldPort = port;
+		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RabbitmqPackage.RABBIT_MQ_RECEIVER__PORT, oldPort, port));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getQueue() {
 		return queue;
 	}
@@ -133,13 +196,38 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInputStyle() {
+		return inputStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputStyle(String newInputStyle) {
+		String oldInputStyle = inputStyle;
+		inputStyle = newInputStyle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RabbitmqPackage.RABBIT_MQ_RECEIVER__INPUT_STYLE, oldInputStyle, inputStyle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__HOST:
 				return getHost();
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__PORT:
+				return getPort();
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__QUEUE:
 				return getQueue();
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__INPUT_STYLE:
+				return getInputStyle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,8 +243,14 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__HOST:
 				setHost((String)newValue);
 				return;
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__PORT:
+				setPort((String)newValue);
+				return;
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__QUEUE:
 				setQueue((String)newValue);
+				return;
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__INPUT_STYLE:
+				setInputStyle((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +267,14 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__HOST:
 				setHost(HOST_EDEFAULT);
 				return;
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__PORT:
+				setPort(PORT_EDEFAULT);
+				return;
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__QUEUE:
 				setQueue(QUEUE_EDEFAULT);
+				return;
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__INPUT_STYLE:
+				setInputStyle(INPUT_STYLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +290,12 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 		switch (featureID) {
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__HOST:
 				return HOST_EDEFAULT == null ? host != null : !HOST_EDEFAULT.equals(host);
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__PORT:
+				return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
 			case RabbitmqPackage.RABBIT_MQ_RECEIVER__QUEUE:
 				return QUEUE_EDEFAULT == null ? queue != null : !QUEUE_EDEFAULT.equals(queue);
+			case RabbitmqPackage.RABBIT_MQ_RECEIVER__INPUT_STYLE:
+				return INPUT_STYLE_EDEFAULT == null ? inputStyle != null : !INPUT_STYLE_EDEFAULT.equals(inputStyle);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +312,12 @@ public class RabbitMQReceiverImpl extends EObjectImpl implements RabbitMQReceive
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (host: ");
 		result.append(host);
+		result.append(", port: ");
+		result.append(port);
 		result.append(", queue: ");
 		result.append(queue);
+		result.append(", inputStyle: ");
+		result.append(inputStyle);
 		result.append(')');
 		return result.toString();
 	}

@@ -31,14 +31,14 @@
         <details key="value" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AttrName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="dkcontrolconfig">
-        <details key="sectionName" value="Newcategory"/>
+        <details key="sectionName" value="Advanced"/>
         <details key="isRequired" value="false"/>
-        <details key="label" value="Label"/>
-        <details key="isModelProperty" value="false"/>
-        <details key="control" value="TextBox"/>
-        <details key="value" value=""/>
+        <details key="label" value="Input Style"/>
+        <details key="isModelProperty" value="true"/>
+        <details key="control" value="ComboViewer"/>
+        <details key="value" value="String;Binary"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -62,6 +62,16 @@
         <details key="value" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="dkcontrolconfig">
+        <details key="sectionName" value="General"/>
+        <details key="isRequired" value="true"/>
+        <details key="label" value="Port"/>
+        <details key="isModelProperty" value="true"/>
+        <details key="control" value="TextBox"/>
+        <details key="value" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="queue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="dkcontrolconfig">
         <details key="sectionName" value="General"/>
@@ -70,6 +80,16 @@
         <details key="isModelProperty" value="true"/>
         <details key="control" value="TextBox"/>
         <details key="value" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="dkcontrolconfig">
+        <details key="sectionName" value="Advanced"/>
+        <details key="isRequired" value="false"/>
+        <details key="label" value="Input Style"/>
+        <details key="isModelProperty" value="false"/>
+        <details key="control" value="ComboViewer"/>
+        <details key="value" value="String;Binary"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

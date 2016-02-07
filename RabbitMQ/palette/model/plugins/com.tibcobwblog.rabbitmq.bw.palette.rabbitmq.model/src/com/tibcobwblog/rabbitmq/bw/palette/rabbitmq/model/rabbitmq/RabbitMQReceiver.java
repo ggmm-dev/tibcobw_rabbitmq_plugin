@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getHost <em>Host</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getPort <em>Port</em>}</li>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getQueue <em>Queue</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getInputStyle <em>Input Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +51,32 @@ public interface RabbitMQReceiver extends EObject {
 	void setHost(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(String)
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage#getRabbitMQReceiver_Port()
+	 * @model annotation="dkcontrolconfig sectionName='General' isRequired='true' label='Port' isModelProperty='true' control='TextBox' value=''"
+	 * @generated
+	 */
+	String getPort();
+
+	/**
+	 * Sets the value of the '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
+	void setPort(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Queue</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -73,5 +101,31 @@ public interface RabbitMQReceiver extends EObject {
 	 * @generated
 	 */
 	void setQueue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Input Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Style</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Style</em>' attribute.
+	 * @see #setInputStyle(String)
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage#getRabbitMQReceiver_InputStyle()
+	 * @model annotation="dkcontrolconfig sectionName='Advanced' isRequired='false' label='Input Style' isModelProperty='false' control='ComboViewer' value='String;Binary'"
+	 * @generated
+	 */
+	String getInputStyle();
+
+	/**
+	 * Sets the value of the '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getInputStyle <em>Input Style</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Style</em>' attribute.
+	 * @see #getInputStyle()
+	 * @generated
+	 */
+	void setInputStyle(String value);
 
 } // RabbitMQReceiver

@@ -83,13 +83,13 @@ public interface RabbitmqPackage extends EPackage {
 	int RABBIT_MQ_SENDER__PORT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Input Style</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RABBIT_MQ_SENDER__ATTR_NAME = 2;
+	int RABBIT_MQ_SENDER__INPUT_STYLE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Rabbit MQ Sender</em>' class.
@@ -120,13 +120,31 @@ public interface RabbitmqPackage extends EPackage {
 	int RABBIT_MQ_RECEIVER__HOST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RABBIT_MQ_RECEIVER__PORT = 1;
+
+	/**
 	 * The feature id for the '<em><b>Queue</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RABBIT_MQ_RECEIVER__QUEUE = 1;
+	int RABBIT_MQ_RECEIVER__QUEUE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Input Style</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RABBIT_MQ_RECEIVER__INPUT_STYLE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Rabbit MQ Receiver</em>' class.
@@ -135,7 +153,7 @@ public interface RabbitmqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RABBIT_MQ_RECEIVER_FEATURE_COUNT = 2;
+	int RABBIT_MQ_RECEIVER_FEATURE_COUNT = 4;
 
 
 	/**
@@ -171,15 +189,15 @@ public interface RabbitmqPackage extends EPackage {
 	EAttribute getRabbitMQSender_Port();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getAttrName <em>Attr Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getInputStyle <em>Input Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Attr Name</em>'.
-	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getAttrName()
+	 * @return the meta object for the attribute '<em>Input Style</em>'.
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQSender#getInputStyle()
 	 * @see #getRabbitMQSender()
 	 * @generated
 	 */
-	EAttribute getRabbitMQSender_AttrName();
+	EAttribute getRabbitMQSender_InputStyle();
 
 	/**
 	 * Returns the meta object for class '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver <em>Rabbit MQ Receiver</em>}'.
@@ -203,6 +221,17 @@ public interface RabbitmqPackage extends EPackage {
 	EAttribute getRabbitMQReceiver_Host();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port</em>'.
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getPort()
+	 * @see #getRabbitMQReceiver()
+	 * @generated
+	 */
+	EAttribute getRabbitMQReceiver_Port();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getQueue <em>Queue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +241,17 @@ public interface RabbitmqPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRabbitMQReceiver_Queue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getInputStyle <em>Input Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input Style</em>'.
+	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitMQReceiver#getInputStyle()
+	 * @see #getRabbitMQReceiver()
+	 * @generated
+	 */
+	EAttribute getRabbitMQReceiver_InputStyle();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -262,12 +302,12 @@ public interface RabbitmqPackage extends EPackage {
 		EAttribute RABBIT_MQ_SENDER__PORT = eINSTANCE.getRabbitMQSender_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Attr Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Input Style</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RABBIT_MQ_SENDER__ATTR_NAME = eINSTANCE.getRabbitMQSender_AttrName();
+		EAttribute RABBIT_MQ_SENDER__INPUT_STYLE = eINSTANCE.getRabbitMQSender_InputStyle();
 
 		/**
 		 * The meta object literal for the '{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl <em>Rabbit MQ Receiver</em>}' class.
@@ -288,12 +328,28 @@ public interface RabbitmqPackage extends EPackage {
 		EAttribute RABBIT_MQ_RECEIVER__HOST = eINSTANCE.getRabbitMQReceiver_Host();
 
 		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RABBIT_MQ_RECEIVER__PORT = eINSTANCE.getRabbitMQReceiver_Port();
+
+		/**
 		 * The meta object literal for the '<em><b>Queue</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute RABBIT_MQ_RECEIVER__QUEUE = eINSTANCE.getRabbitMQReceiver_Queue();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RABBIT_MQ_RECEIVER__INPUT_STYLE = eINSTANCE.getRabbitMQReceiver_InputStyle();
 
 	}
 

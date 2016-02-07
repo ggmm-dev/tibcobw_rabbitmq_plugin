@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQSenderImpl#getHost <em>Host</em>}</li>
  *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQSenderImpl#getPort <em>Port</em>}</li>
- *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQSenderImpl#getAttrName <em>Attr Name</em>}</li>
+ *   <li>{@link com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQSenderImpl#getInputStyle <em>Input Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,24 +69,24 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 	protected String port = PORT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
+	 * The default value of the '{@link #getInputStyle() <em>Input Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
+	 * @see #getInputStyle()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ATTR_NAME_EDEFAULT = null;
+	protected static final String INPUT_STYLE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAttrName() <em>Attr Name</em>}' attribute.
+	 * The cached value of the '{@link #getInputStyle() <em>Input Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttrName()
+	 * @see #getInputStyle()
 	 * @generated
 	 * @ordered
 	 */
-	protected String attrName = ATTR_NAME_EDEFAULT;
+	protected String inputStyle = INPUT_STYLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +154,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAttrName() {
-		return attrName;
+	public String getInputStyle() {
+		return inputStyle;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttrName(String newAttrName) {
-		String oldAttrName = attrName;
-		attrName = newAttrName;
+	public void setInputStyle(String newInputStyle) {
+		String oldInputStyle = inputStyle;
+		inputStyle = newInputStyle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RabbitmqPackage.RABBIT_MQ_SENDER__ATTR_NAME, oldAttrName, attrName));
+			eNotify(new ENotificationImpl(this, Notification.SET, RabbitmqPackage.RABBIT_MQ_SENDER__INPUT_STYLE, oldInputStyle, inputStyle));
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 				return getHost();
 			case RabbitmqPackage.RABBIT_MQ_SENDER__PORT:
 				return getPort();
-			case RabbitmqPackage.RABBIT_MQ_SENDER__ATTR_NAME:
-				return getAttrName();
+			case RabbitmqPackage.RABBIT_MQ_SENDER__INPUT_STYLE:
+				return getInputStyle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,8 +202,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 			case RabbitmqPackage.RABBIT_MQ_SENDER__PORT:
 				setPort((String)newValue);
 				return;
-			case RabbitmqPackage.RABBIT_MQ_SENDER__ATTR_NAME:
-				setAttrName((String)newValue);
+			case RabbitmqPackage.RABBIT_MQ_SENDER__INPUT_STYLE:
+				setInputStyle((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,8 +223,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 			case RabbitmqPackage.RABBIT_MQ_SENDER__PORT:
 				setPort(PORT_EDEFAULT);
 				return;
-			case RabbitmqPackage.RABBIT_MQ_SENDER__ATTR_NAME:
-				setAttrName(ATTR_NAME_EDEFAULT);
+			case RabbitmqPackage.RABBIT_MQ_SENDER__INPUT_STYLE:
+				setInputStyle(INPUT_STYLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 				return HOST_EDEFAULT == null ? host != null : !HOST_EDEFAULT.equals(host);
 			case RabbitmqPackage.RABBIT_MQ_SENDER__PORT:
 				return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
-			case RabbitmqPackage.RABBIT_MQ_SENDER__ATTR_NAME:
-				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
+			case RabbitmqPackage.RABBIT_MQ_SENDER__INPUT_STYLE:
+				return INPUT_STYLE_EDEFAULT == null ? inputStyle != null : !INPUT_STYLE_EDEFAULT.equals(inputStyle);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,8 +262,8 @@ public class RabbitMQSenderImpl extends EObjectImpl implements RabbitMQSender {
 		result.append(host);
 		result.append(", port: ");
 		result.append(port);
-		result.append(", AttrName: ");
-		result.append(attrName);
+		result.append(", inputStyle: ");
+		result.append(inputStyle);
 		result.append(')');
 		return result.toString();
 	}
