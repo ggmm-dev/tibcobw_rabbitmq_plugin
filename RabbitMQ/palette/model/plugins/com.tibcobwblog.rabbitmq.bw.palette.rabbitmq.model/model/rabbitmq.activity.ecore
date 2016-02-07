@@ -34,11 +34,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="dkcontrolconfig">
         <details key="sectionName" value="Advanced"/>
-        <details key="isRequired" value="false"/>
+        <details key="isRequired" value="true"/>
         <details key="label" value="Input Style"/>
         <details key="isModelProperty" value="true"/>
         <details key="control" value="ComboViewer"/>
-        <details key="value" value="String;Binary"/>
+        <details key="value" value="String,Binary"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -85,11 +85,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="dkcontrolconfig">
         <details key="sectionName" value="Advanced"/>
-        <details key="isRequired" value="false"/>
+        <details key="isRequired" value="true"/>
         <details key="label" value="Input Style"/>
-        <details key="isModelProperty" value="false"/>
+        <details key="isModelProperty" value="true"/>
         <details key="control" value="ComboViewer"/>
-        <details key="value" value="String;Binary"/>
+        <details key="value" value="String,Binary"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

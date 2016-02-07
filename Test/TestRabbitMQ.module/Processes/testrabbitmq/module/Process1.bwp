@@ -138,7 +138,7 @@
             <xsd:element name="RabbitMQReceiverOutput">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="message" type="xsd:string"/>
+                        <xsd:element name="message" type="xsd:base64Binary"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -285,7 +285,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="-2"
+                                    x="-3"
                                     xsi:type="notation:Bounds" y="62"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -353,7 +353,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, -1, -120, 0]$[121, 0, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -1, -121, 0]$[122, 0, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <bpws:variables>
@@ -419,11 +419,12 @@
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="60" name="RabbitMQReceiver"
-                    tibex:xpdlId="4787b0d5-fcda-4974-a285-7a7cdf18e2ff"
+                    tibex:xpdlId="448b9208-e3b1-439a-8388-6c6800aef321"
                     variable="RabbitMQReceiver" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="RabbitMQReceiverToLog"/>
                     </bpws:sources>
+                    <bpws:correlations/>
                     <tibex:eventSource>
                         <bwext:BWActivity
                             activityTypeID="bw.rabbitmq.RabbitMQReceiver"
@@ -434,6 +435,7 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/rabbitmq#//RabbitMQReceiver"/>
                                     <value host="192.168.99.100"
+                                    inputStyle="Binary" port="32781"
                                     queue="bw6" xsi:type="rabbitmq:RabbitMQReceiver"/>
                                 </properties>
                             </activityConfig>

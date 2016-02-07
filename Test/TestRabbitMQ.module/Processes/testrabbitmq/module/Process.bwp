@@ -123,7 +123,7 @@
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="queue" type="xsd:string"/>
-                        <xsd:element name="message" type="xsd:string"/>
+                        <xsd:element name="message" type="xsd:anyType"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -313,7 +313,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="153"
+                                    x="137"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -439,12 +439,12 @@
             </bpws:reply>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/RabbitMQ/RabbitMQSender&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RabbitMQSender-input&quot; match=&quot;/&quot;>&lt;tns:RabbitMQSenderInput>&lt;queue>&lt;xsl:value-of select=&quot;&amp;quot;bw6&amp;quot;&quot;/>&lt;/queue>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Test message&amp;quot;&quot;/>&lt;/message>&lt;/tns:RabbitMQSenderInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/RabbitMQ/RabbitMQSender&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RabbitMQSender-input&quot; match=&quot;/&quot;>&lt;tns:RabbitMQSenderInput>&lt;queue>&lt;xsl:value-of select=&quot;&amp;quot;bw6&amp;quot;&quot;/>&lt;/queue>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;prueba1&amp;quot;&quot;/>&lt;/message>&lt;/tns:RabbitMQSenderInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                     inputVariable="RabbitMQSender-input"
                     name="RabbitMQSender"
                     outputVariable="RabbitMQSender"
-                    tibex:xpdlId="5c90109d-457c-4f53-9388-659fe87369c6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="3b8b9362-acd7-4d77-ad8e-dbb42243f703" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="operationInTooperationOut"/>
                     </bpws:targets>
@@ -453,7 +453,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/RabbitMQ/RabbitMQSender&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RabbitMQSender-input&quot; match=&quot;/&quot;>&lt;tns:RabbitMQSenderInput>&lt;queue>&lt;xsl:value-of select=&quot;&amp;quot;bw6&amp;quot;&quot;/>&lt;/queue>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Test message&amp;quot;&quot;/>&lt;/message>&lt;/tns:RabbitMQSenderInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/RabbitMQ/RabbitMQSender&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;RabbitMQSender-input&quot; match=&quot;/&quot;>&lt;tns:RabbitMQSenderInput>&lt;queue>&lt;xsl:value-of select=&quot;&amp;quot;bw6&amp;quot;&quot;/>&lt;/queue>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;prueba1&amp;quot;&quot;/>&lt;/message>&lt;/tns:RabbitMQSenderInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -464,7 +464,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/rabbitmq#//RabbitMQSender"/>
-                                    <value host="192.168.99.100" xsi:type="rabbitmq:RabbitMQSender"/>
+                                    <value host="192.168.99.100"
+                                    inputStyle="String" port="32781" xsi:type="rabbitmq:RabbitMQSender"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

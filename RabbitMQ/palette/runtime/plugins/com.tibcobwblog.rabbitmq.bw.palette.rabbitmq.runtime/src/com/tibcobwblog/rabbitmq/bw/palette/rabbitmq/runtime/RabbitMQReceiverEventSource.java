@@ -341,7 +341,7 @@ public class RabbitMQReceiverEventSource<N> extends EventSource<N> implements Ra
 	    try{
 	    	factory.setPort(Integer.parseInt(this.eventSourceConfig.getPort()));
 	    }catch(NumberFormatException ex){
-	    	factory.setPort(35678);
+	    	factory.setPort(5672);
 	    }
 	     try {
 			connection = factory.newConnection();

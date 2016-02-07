@@ -2,9 +2,14 @@ package com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xsd.XSDElementDeclaration;
+
 import com.tibco.bw.design.api.BWEventSourceSignature;
+import com.tibco.bw.design.util.XSDUtility;
+import com.tibco.bw.model.activityconfig.ConfigProperty;
 import com.tibco.bw.model.activityconfig.Configuration;
+import com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQReceiverImpl;
 /**
  * <!-- begin-custom-doc -->
  * 
@@ -62,6 +67,25 @@ public class RabbitMQReceiverSignature extends BWEventSourceSignature
         XSDElementDeclaration outPutType = null;
         outPutType =  RabbitMQReceiverSchema.getOutputType();
         // begin-custom-code
+        EList<ConfigProperty> props = config.getProperties();
+        if (props != null && props.size() > 0) {
+            com.tibco.bw.model.activityconfig.impl.EMFPropertyImpl p1 = (com.tibco.bw.model.activityconfig.impl.EMFPropertyImpl) props
+                    .get(0);
+            RabbitMQReceiverImpl rabbitMqSender = (RabbitMQReceiverImpl) p1.getValue();
+            if (rabbitMqSender != null) {
+                XSDElementDeclaration message = getChildElement(outPutType, "message",
+                        false);
+                if (message != null) {
+                    if (!"String".equals(rabbitMqSender.getInputStyle())) {
+                        message.setTypeDefinition(XSDUtility
+                                .getSimpleTypeDefinition("base64Binary"));
+                    } else {
+                        message.setTypeDefinition(XSDUtility
+                                .getSimpleTypeDefinition("string"));
+                    }
+                }
+            }
+        }
         // end-custom-code
         return outPutType;
     }

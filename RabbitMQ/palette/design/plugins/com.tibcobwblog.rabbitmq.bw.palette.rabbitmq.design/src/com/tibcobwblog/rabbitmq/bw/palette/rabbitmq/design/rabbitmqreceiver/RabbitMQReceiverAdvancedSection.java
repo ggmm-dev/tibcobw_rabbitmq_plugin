@@ -1,7 +1,9 @@
 package com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqreceiver;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import com.tibco.bw.design.field.AttributeBindingField;
 import com.tibco.bw.design.field.viewer.CustomComboViewer;
+import com.tibco.bw.design.util.PropertyTypeQnameConstants;
 import com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage;
 
 import org.eclipse.swt.widgets.Composite;
@@ -15,6 +17,13 @@ import com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.utils.Messages;
 public class RabbitMQReceiverAdvancedSection extends AbstractBWTransactionalSection 
 {
    /**
+	* <!-- begin-custom-doc -->
+	* 
+	* <!-- end-custom-doc -->
+	* @generated
+	*/
+    private AttributeBindingField inputStyleABF;
+/**
 	* <!-- begin-custom-doc -->
 	* 
 	* <!-- end-custom-doc -->
@@ -38,6 +47,7 @@ public class RabbitMQReceiverAdvancedSection extends AbstractBWTransactionalSect
 	 */
     @Override
     protected void initBindings() {
+        getBindingManager().bind(inputStyleABF, getInput(), RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__INPUT_STYLE); 
         getBindingManager().bindCustomViewer(inputStyle, getInput(), RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__INPUT_STYLE, BWFieldFactory.getInstance().getPropertyTargetToModelUpdateValueStrategy(), null); 
    	    // begin-custom-code
         // end-custom-code
@@ -56,10 +66,12 @@ public class RabbitMQReceiverAdvancedSection extends AbstractBWTransactionalSect
     @Override
     protected Composite doCreateControl(final Composite root) {
         Composite parent = BWFieldFactory.getInstance().createComposite(root, 2);
-   	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQRECEIVER_INPUTSTYLE, false);
+   	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQRECEIVER_INPUTSTYLE, true);
    	    inputStyle = BWFieldFactory.getInstance().createComboViewer(parent);
    	    inputStyle.setContentProvider(new ArrayContentProvider());
-   	    inputStyle.setInput(new String[]{"String;Binary"});
+   	    inputStyle.setInput(new String[]{"String","Binary"});
+
+   	    inputStyleABF = BWFieldFactory.getInstance().createAttributeBindingField(parent, inputStyle.getControl(), PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
 
         // begin-custom-code
         // end-custom-code

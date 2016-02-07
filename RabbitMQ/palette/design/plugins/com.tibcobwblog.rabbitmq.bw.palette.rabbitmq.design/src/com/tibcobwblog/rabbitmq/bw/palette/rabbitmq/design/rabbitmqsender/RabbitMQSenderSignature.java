@@ -2,9 +2,14 @@ package com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.rabbitmqsender;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xsd.XSDElementDeclaration;
+
 import com.tibco.bw.design.api.BWActivitySignature;
+import com.tibco.bw.design.util.XSDUtility;
 import com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.design.RabbitMQExceptionsSchema;
+import com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.impl.RabbitMQSenderImpl;
+import com.tibco.bw.model.activityconfig.ConfigProperty;
 import com.tibco.bw.model.activityconfig.Configuration;
 /**
  * <!-- begin-custom-doc -->
@@ -67,9 +72,28 @@ public class RabbitMQSenderSignature extends BWActivitySignature
 	*/
     @Override
     public XSDElementDeclaration getInputType(final Configuration config) {
-        XSDElementDeclaration inputType = null;
-        inputType =  RabbitMQSenderSchema.getInputType(); 
-        // begin-custom-code
+            XSDElementDeclaration inputType = null;
+            inputType =  RabbitMQSenderSchema.getInputType(); 
+            // begin-custom-code
+            EList<ConfigProperty> props = config.getProperties();
+            if (props != null && props.size() > 0) {
+                com.tibco.bw.model.activityconfig.impl.EMFPropertyImpl p1 = (com.tibco.bw.model.activityconfig.impl.EMFPropertyImpl) props
+                        .get(0);
+                RabbitMQSenderImpl rabbitMqSender = (RabbitMQSenderImpl) p1.getValue();
+                if (rabbitMqSender != null) {
+                    XSDElementDeclaration message = getChildElement(inputType, "message",
+                            false);
+                    if (message != null) {
+                        if (!"String".equals(rabbitMqSender.getInputStyle())) {
+                            message.setTypeDefinition(XSDUtility
+                                    .getSimpleTypeDefinition("base64Binary"));
+                        } else {
+                            message.setTypeDefinition(XSDUtility
+                                    .getSimpleTypeDefinition("string"));
+                        }
+                    }
+                }
+        } 
         // end-custom-code
         return inputType;
     } 

@@ -57,8 +57,11 @@ public class RabbitMQSenderSynchronousActivity<N> extends SyncActivity<N>
 		// begin-custom-code
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost(activityConfig.getHost());
-		factory.setPort(32769);
-
+	    try{
+	    	factory.setPort(Integer.parseInt(activityConfig.getPort()));
+	    }catch(NumberFormatException ex){
+	    	factory.setPort(5672);
+	    }
 		try {
 			connection = factory.newConnection();
 			channel = connection.createChannel();

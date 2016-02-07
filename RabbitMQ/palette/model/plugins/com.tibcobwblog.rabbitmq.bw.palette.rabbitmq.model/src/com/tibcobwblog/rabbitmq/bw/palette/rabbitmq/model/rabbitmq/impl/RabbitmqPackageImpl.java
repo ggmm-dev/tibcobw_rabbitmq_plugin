@@ -336,11 +336,11 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 		   source, 
 		   new String[] {
 			 "sectionName", "Advanced",
-			 "isRequired", "false",
+			 "isRequired", "true",
 			 "label", "Input Style",
 			 "isModelProperty", "true",
 			 "control", "ComboViewer",
-			 "value", "String;Binary"
+			 "value", "String,Binary"
 		   });	
 		addAnnotation
 		  (getRabbitMQReceiver_Host(), 
@@ -380,11 +380,11 @@ public class RabbitmqPackageImpl extends EPackageImpl implements RabbitmqPackage
 		   source, 
 		   new String[] {
 			 "sectionName", "Advanced",
-			 "isRequired", "false",
+			 "isRequired", "true",
 			 "label", "Input Style",
-			 "isModelProperty", "false",
+			 "isModelProperty", "true",
 			 "control", "ComboViewer",
-			 "value", "String;Binary"
+			 "value", "String,Binary"
 		   });
 	}
 

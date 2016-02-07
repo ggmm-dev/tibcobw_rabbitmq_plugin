@@ -22,7 +22,7 @@ public class RabbitMQReceiverModelHelper extends BWAbstractModelHelper
     @Override
     public EObject createInstance() {
         RabbitMQReceiver activity = RabbitmqFactory.eINSTANCE.createRabbitMQReceiver();
-        activity.setInputStyle("String;Binary");
+        activity.setInputStyle("String");
         // begin-custom-code
         // end-custom-code
         return activity;

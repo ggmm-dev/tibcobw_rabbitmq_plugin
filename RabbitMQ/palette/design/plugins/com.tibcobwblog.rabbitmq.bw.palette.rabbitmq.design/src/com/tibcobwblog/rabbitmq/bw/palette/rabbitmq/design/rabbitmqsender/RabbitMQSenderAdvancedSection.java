@@ -66,10 +66,10 @@ public class RabbitMQSenderAdvancedSection extends AbstractBWTransactionalSectio
     @Override
     protected Composite doCreateControl(final Composite root) {
         Composite parent = BWFieldFactory.getInstance().createComposite(root, 2);
-   	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQSENDER_INPUTSTYLE, false);
+   	    BWFieldFactory.getInstance().createLabel(parent, Messages.RABBITMQSENDER_INPUTSTYLE, true);
    	    inputStyle = BWFieldFactory.getInstance().createComboViewer(parent);
    	    inputStyle.setContentProvider(new ArrayContentProvider());
-   	    inputStyle.setInput(new String[]{"String;Binary"});
+   	    inputStyle.setInput(new String[]{"String","Binary"});
 
    	    inputStyleABF = BWFieldFactory.getInstance().createAttributeBindingField(parent, inputStyle.getControl(), PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
 

@@ -86,7 +86,7 @@ public interface RabbitMQSender extends EObject {
 	 * @return the value of the '<em>Input Style</em>' attribute.
 	 * @see #setInputStyle(String)
 	 * @see com.tibcobwblog.rabbitmq.bw.palette.rabbitmq.model.rabbitmq.RabbitmqPackage#getRabbitMQSender_InputStyle()
-	 * @model annotation="dkcontrolconfig sectionName='Advanced' isRequired='false' label='Input Style' isModelProperty='true' control='ComboViewer' value='String;Binary'"
+	 * @model annotation="dkcontrolconfig sectionName='Advanced' isRequired='true' label='Input Style' isModelProperty='true' control='ComboViewer' value='String,Binary'"
 	 * @generated
 	 */
 	String getInputStyle();

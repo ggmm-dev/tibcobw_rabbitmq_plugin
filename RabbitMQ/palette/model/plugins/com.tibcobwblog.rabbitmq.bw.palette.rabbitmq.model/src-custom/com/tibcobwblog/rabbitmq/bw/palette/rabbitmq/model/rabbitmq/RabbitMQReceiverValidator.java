@@ -54,6 +54,15 @@ public class RabbitMQReceiverValidator implements EventSourceConfigurationValida
 		        message = NLS.bind(Messages.PALETTE_PARAMETER_VALUE_INVALID, new String[] {"Host"});
 		        context.createError(message, null, MessageCode.PARAMETER_NOT_SPECIFIED, RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__HOST);
 		    }
+		}
+	    String inputStyleModul = context.getAttributeBindingPropertyName("inputStyle");
+		if(inputStyleModul == null || "".equals(inputStyleModul)){
+		    String inputStyle = model.getInputStyle(); 
+		    if(inputStyle == null || "".equals(inputStyle)) {
+		        String message = ""; //$NON-NLS-1$
+		        message = NLS.bind(Messages.PALETTE_PARAMETER_VALUE_INVALID, new String[] {"Input Style"});
+		        context.createError(message, null, MessageCode.PARAMETER_NOT_SPECIFIED, RabbitmqPackage.Literals.RABBIT_MQ_RECEIVER__INPUT_STYLE);
+		    }
 		}	
 		// begin-custom-code
 	    // end-custom-code
